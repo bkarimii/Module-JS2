@@ -157,3 +157,27 @@ body {
     max-height: 80px;
   }
 }
+
+#reading-list{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 
+  'b1'
+  'b2'
+  'b3';
+  grid-gap: 4px;
+  border: 1px black;
+}
+#reading-list>*{
+  padding: 1em;
+}
+#first-book{
+  grid-area: b1;
+}
+#second-book{
+  grid-area: b2;
+}
+
+#third-book{
+  grid-area: b3;
+}

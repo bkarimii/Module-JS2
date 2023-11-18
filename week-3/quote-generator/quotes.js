@@ -499,6 +499,7 @@ const buttonQuoteMaker=document.getElementById('new-quote');
 const quoteContainer=document.getElementById('quote');
 const authorContainer=document.getElementById('author');
 
+// use the pickfromArray function an object and took value of the returned object
 const showQuote=function showQ(){
   const arrayOfQuotes=pickFromArray(quotes);
   quoteContainer.textContent=arrayOfQuotes.quote;
@@ -511,12 +512,12 @@ showQuote();
 
   const checkBoxValidator=document.getElementById("check-box");
 
-  // change the time of random quotes 
-  const secondsToChangeQuote=20000;
+  // change the time of random quotes every X seconds
+  const secondsToChangeQuote=2000;
   const quoteCahngerPerTime=document.getElementById('second-for-quote');
-  quoteCahngerPerTime.textContent=secondsToChangeQuote;
+  quoteCahngerPerTime.textContent=secondsToChangeQuote/1000;
 
-
+// if checkbox checked it shows random quotes every X seconds
   function forCheckBox(checkBoxValidator){
     if(checkBoxValidator.checked==true){
       checkBoxInterval=setInterval(function(){
