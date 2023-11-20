@@ -18,28 +18,35 @@ let todos = [
 populateTodoList(todos);
 
 
-const todoElements=function elementStructure(){
+const todoElements=function elementStructure(task){
   //<li> tag creating
-  const liItem=document.createComment('li');
+  const liItem=document.createElement('li');
   // span tag inside li
-  const span=document.createComment('span');
+  const span=document.createElement('span');
   span.className="badge bg-primary rounded-pill";
   
   // create i tag for completed tasks
   const CompleteButtonSpan=document.createElement('i');
   CompleteButtonSpan.className="fa fa-check";
   CompleteButtonSpan.setAttribute('aria-hidden','true');
+  CompleteButtonSpan.addEventListener('click',function lineThrough(){
+    CompleteButtonSpan.style='textDecoration : line-through;';
+
+  })
 
   // i tag for delete tasks inside span tag
   let deleteButtonSpan=document.createElement('i');
   deleteButtonSpan.className="fa fa-trash";
   deleteButtonSpan.setAttribute('aria-hidden','true');
-  
+
   // append both i tags to span
   span.appendChild(CompleteButtonSpan);
   span.appendChild(deleteButtonSpan);
 
   liItem.appendChild(span);
+  list.appendChild(liItem);
+
+  liItem.textContent=task;
 } 
 // This function will take the value of the input field and add it as a new todo to the bottom of the todo list. These new todos will need the completed and delete buttons adding like normal.
 function addNewTodo(event) {
@@ -53,14 +60,8 @@ function addNewTodo(event) {
     if(inputValue.length!=0){
       let newTask={task:inputValue,completed:false}
       todos.push(newTask);
-      const newItemToDo=document.createElement('li');
-      newItemToDo.innerHTML=`${newTask.task}
-      <span class="badge bg-primary rounded-pill">
-      <i class="fa fa-check" aria-hidden="true"></i>
-      <i class="fa fa-trash" aria-hidden="true"></i>
-      </span>` ;
+      todoElements(newTask.task);
       
-      list.appendChild(newItemToDo);
       inputBox.Value='';
     }
 
