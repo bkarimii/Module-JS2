@@ -1,1 +1,43 @@
+html,body{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+}
 
+body{
+    background-image: url('./assets/world.jpg');
+    padding: 0;
+}
+
+section{
+    display: flex;
+    margin: 1%;
+    border: 1px white;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+form{
+    border: 2px white;
+}
+
+form input{
+    width: 20rem;
+    height: 5rem;
+    margin-bottom:1em ;
+}
+
+form button{
+    width: 10rem;
+    height: 2.4rem;
+    margin: 0;
+    padding: 0;
+    background-color: orange;
+    font-weight: bold;
+}
+
+#todo-container{
+    border: 2px;
+    width: 30rem;
+
+}
