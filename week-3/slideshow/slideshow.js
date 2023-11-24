@@ -7,9 +7,21 @@ document.addEventListener('DOMContentLoaded',function(){
         './animal/panda.jpg'
     ];
     let counter=0;
+    let inputTimer=5000;
 
     const img=document.getElementById('carousel-img');
     img.setAttribute('src',images[counter]);
+
+    // set timer based on input box
+    let slideShowTimer=document.getElementById('slideshow-timer');
+    const submitTimer=document.getElementById('timer-submit');
+
+    submitTimer.addEventListener('click',function(){
+        inputTimer=parseInt(slideShowTimer.value)*1000|| 1000;
+        slideShowTimer.value='';
+        stopsliding();
+
+    })
 
 
 
@@ -46,14 +58,20 @@ document.addEventListener('DOMContentLoaded',function(){
     backWard.addEventListener('click',backwardAction);
 
     // setiing up stop button 
-    const stop=document.getElementById('stop-btn');
-    stop.addEventListener('click',function(){
+
+    function stopsliding(){
         counter=0;
         img.setAttribute('src',images[counter]);
         clearInterval(autoForwardInterval);
         clearInterval(autoBackwardInterval);
-        
-    })
+    }
+
+    const stop=document.getElementById('stop-btn');
+    stop.addEventListener('click',function (){
+        stopsliding();
+        inputTimer=5000;
+    }
+    );
 
     //setting up auto-forward btn
     const autoForward=document.getElementById("auto-forward-btn");
@@ -63,7 +81,7 @@ document.addEventListener('DOMContentLoaded',function(){
             forwardAction();
             
             
-        }, 1000);
+        }, inputTimer);
         clearInterval(autoBackwardInterval);
     })
 
@@ -73,9 +91,12 @@ document.addEventListener('DOMContentLoaded',function(){
         autoBackwardInterval=setInterval(() => {
             backwardAction();
             
-        }, 1000);
+        }, inputTimer);
         clearInterval(autoForwardInterval);
     })
+
+    
+    
 })
 
 

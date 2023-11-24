@@ -36,9 +36,10 @@ afterEach(() => {
 describe("Level 1 challenge", () => {
   test("renders the first image with control buttons", () => {
     const images = [
-      "./assets/cute-cat-a.png",
-      "./assets/cute-cat-b.jpg",
-      "./assets/cute-cat-c.jpg",
+      './animal/cat.jpg',
+      "./animal/coala.jpeg",
+      "./animal/dog.jpg",
+      './animal/panda.jpg'
     ];
     const image = page.window.document.querySelector("#carousel-img");
     const forwardBtn = page.window.document.querySelector("#forward-btn");
@@ -81,9 +82,10 @@ describe("Level 1 challenge", () => {
 
   test("can move the image backwards to the end", () => {
     const images = [
-      "./assets/cute-cat-a.png",
-      "./assets/cute-cat-b.jpg",
-      "./assets/cute-cat-c.jpg",
+      './animal/cat.jpg',
+      "./animal/coala.jpeg",
+      "./animal/dog.jpg",
+      './animal/panda.jpg'
     ];
     const image = page.window.document.querySelector("#carousel-img");
     const backwardBtn = page.window.document.querySelector("#backward-btn");
@@ -97,9 +99,10 @@ describe("Level 1 challenge", () => {
 
   test("can move the image backwards multiple times", () => {
     const images = [
-      "./assets/cute-cat-a.png",
-      "./assets/cute-cat-b.jpg",
-      "./assets/cute-cat-c.jpg",
+      './animal/cat.jpg',
+      "./animal/coala.jpeg",
+      "./animal/dog.jpg",
+      './animal/panda.jpg'
     ];
     const image = page.window.document.querySelector("#carousel-img");
     const backwardBtn = page.window.document.querySelector("#backward-btn");
@@ -113,9 +116,10 @@ describe("Level 1 challenge", () => {
 
   test("moving forwards will eventually wrap around to the start", () => {
     const images = [
-      "./assets/cute-cat-a.png",
-      "./assets/cute-cat-b.jpg",
-      "./assets/cute-cat-c.jpg",
+      './animal/cat.jpg',
+      "./animal/coala.jpeg",
+      "./animal/dog.jpg",
+      './animal/panda.jpg'
     ];
     const image = page.window.document.querySelector("#carousel-img");
     const forwardBtn = page.window.document.querySelector("#forward-btn");
@@ -139,9 +143,10 @@ describe("Level 2 challenge", () => {
   });
   test("can start moving images forward automatically", () => {
     const images = [
-      "./assets/cute-cat-a.png",
-      "./assets/cute-cat-b.jpg",
-      "./assets/cute-cat-c.jpg",
+      './animal/cat.jpg',
+      "./animal/coala.jpeg",
+      "./animal/dog.jpg",
+      './animal/panda.jpg'
     ];
     const image = page.window.document.querySelector("#carousel-img");
     const autoForwardBtn = page.window.document.querySelector("#auto-forward");
@@ -165,10 +170,11 @@ describe("Level 2 challenge", () => {
     expect(image).toHaveAttribute("src", images[0]);
   });
   test("can start moving images backward automatically", () => {
-    const images = [
-      "./assets/cute-cat-a.png",
-      "./assets/cute-cat-b.jpg",
-      "./assets/cute-cat-c.jpg",
+      const images = [
+      './animal/cat.jpg',
+      "./animal/coala.jpeg",
+      "./animal/dog.jpg",
+      './animal/panda.jpg'
     ];
     const image = page.window.document.querySelector("#carousel-img");
     const autoForwardBtn = page.window.document.querySelector("#auto-forward");
@@ -193,9 +199,10 @@ describe("Level 2 challenge", () => {
   });
   test("can stop the automatic timer", () => {
     const images = [
-      "./assets/cute-cat-a.png",
-      "./assets/cute-cat-b.jpg",
-      "./assets/cute-cat-c.jpg",
+      './animal/cat.jpg',
+      "./animal/coala.jpeg",
+      "./animal/dog.jpg",
+      './animal/panda.jpg'
     ];
     const image = page.window.document.querySelector("#carousel-img");
     const autoForwardBtn = page.window.document.querySelector("#auto-forward");
@@ -225,3 +232,5 @@ describe("Level 2 challenge", () => {
     expect(image).toHaveAttribute("src", images[2]);
   });
 });
+
+
