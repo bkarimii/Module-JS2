@@ -51,9 +51,10 @@ describe("Level 1 challenge", () => {
   });
   test("can move the image forwards once", () => {
     const images = [
-      "./assets/cute-cat-a.png",
-      "./assets/cute-cat-b.jpg",
-      "./assets/cute-cat-c.jpg",
+      './animal/cat.jpg',
+      "./animal/coala.jpeg",
+      "./animal/dog.jpg",
+      './animal/panda.jpg'
     ];
     const image = page.window.document.querySelector("#carousel-img");
     const forwardBtn = page.window.document.querySelector("#forward-btn");
@@ -67,9 +68,10 @@ describe("Level 1 challenge", () => {
 
   test("can move the image forwards multiple times", () => {
     const images = [
-      "./assets/cute-cat-a.png",
-      "./assets/cute-cat-b.jpg",
-      "./assets/cute-cat-c.jpg",
+      './animal/cat.jpg',
+      "./animal/coala.jpeg",
+      "./animal/dog.jpg",
+      './animal/panda.jpg'
     ];
     const image = page.window.document.querySelector("#carousel-img");
     const forwardBtn = page.window.document.querySelector("#forward-btn");

@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
 
     function forwardAction(){
-        if(counter===3){
+        if(counter===images.length-1){
             counter=0;
             img.setAttribute('src',images[counter]);
         }
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded',function(){
     ////setting up backward function
     function backwardAction(){
         if(counter===0){
-            counter=3;
+            counter=images.length-1;
             img.setAttribute('src',images[counter]);
         }
         else{
@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded',function(){
     forwardBtn.addEventListener('click',forwardAction);
 
     ///////////////set up for backward button/////////////////////////
-    const backWard=document.getElementById("backward-btn")
-    backWard.addEventListener('click',backwardAction);
+    const backwardBtn=document.getElementById("backward-btn")
+    backwardBtn.addEventListener('click',backwardAction);
 
     // setiing up stop button 
 
@@ -74,8 +74,8 @@ document.addEventListener('DOMContentLoaded',function(){
     );
 
     //setting up auto-forward btn
-    const autoForward=document.getElementById("auto-forward-btn");
-    autoForward.addEventListener('click',function(){
+    const autoForwardBtn=document.getElementById("auto-forward-btn");
+    autoForwardBtn.addEventListener('click',function(){
         autoForwardInterval=setInterval(() => {
             
             forwardAction();
@@ -86,8 +86,8 @@ document.addEventListener('DOMContentLoaded',function(){
     })
 
     // setting up auto backward button
-    const autoBackward=document.getElementById("auto-backward-btn");
-    autoBackward.addEventListener('click',function (){
+    const autoBackwardBtn=document.getElementById("auto-backward-btn");
+    autoBackwardBtn.addEventListener('click',function (){
         autoBackwardInterval=setInterval(() => {
             backwardAction();
             
