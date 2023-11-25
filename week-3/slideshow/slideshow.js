@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded',function(){
         clearInterval(autoBackwardInterval);
     }
 
-    const stop=document.getElementById('stop-btn');
+    const stop=document.getElementById('stop');
     stop.addEventListener('click',function (){
         stopsliding();
         inputTimer=5000;
@@ -86,8 +86,8 @@ document.addEventListener('DOMContentLoaded',function(){
     })
 
     // setting up auto backward button
-    const autoBackwardBtn=document.getElementById("auto-backward-btn");
-    autoBackwardBtn.addEventListener('click',function (){
+    const autoBackBtn=document.getElementById("auto-backward-btn");
+    autoBackBtn.addEventListener('click',function (){
         autoBackwardInterval=setInterval(() => {
             backwardAction();
             
